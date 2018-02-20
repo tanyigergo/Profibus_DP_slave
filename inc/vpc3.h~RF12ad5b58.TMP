@@ -1,0 +1,25 @@
+#ifndef __SPI_VPC3_H 
+#define __SPI_VPC3_H 
+
+#include <stdint.h>
+
+
+/*****************************DEFINÍCIÓK*******************************************/
+#define READ_BYTE 			(0X13)
+#define READ_ARRAY			(0X03)
+#define WRITE_BYTE      (0X12)
+#define WRITE_ARRAY     (0X02)
+
+#define SPI1_NSS_PIN		(0x10)
+#define SPI1_SCK_PIN		(0x20)
+#define SPI1_MISO_PIN		(0x40)
+#define SPI1_MOSI_PIN		(0x80)
+
+
+
+uint8_t Vpc3Read(uint16_t wAddress);
+
+uint8_t CopyFromVpc3( uint16_t* wAddress,  int wLength );
+
+
+#endif
