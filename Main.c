@@ -16,21 +16,18 @@
 int main(void)
 {
 /******************************Init peripherals******************************************************/
-	myRCC_Init();
-	myGPIO_Init();
-	mySPI_Init();
+	myRCC_Init();										
+	myGPIO_Init();														
+	mySPI_Init();											
 	DelayInit();
 	lcd16x2_init(LCD16X2_DISPLAY_ON_CURSOR_OFF_BLINK_OFF);
-	volatile uint8_t masterData[2];
-	
 	SPI_Cmd(SPI1, ENABLE);
 	
-/********************************Application*********************************************/
 	
+	volatile uint8_t masterData[2];		//2 bytes of data for the PB master device
+	uint8_t kapcs;						//var for button press
 
-	uint8_t kapcs;
-
-	DpAppl_SetResetVPC3Channel1();
+	DpAppl_SetResetVPC3Channel1();		
 	DpAppl_ProfibusInit();
 	
 
